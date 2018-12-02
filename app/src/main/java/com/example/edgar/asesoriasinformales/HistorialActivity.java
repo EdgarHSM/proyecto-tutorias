@@ -190,23 +190,23 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
 
                             TextView taskdate = new TextView(HistorialActivity.this);
                             taskdate.setTextSize(10);
-                            taskdate.setText(asesoriaList.get(x).getAsesor());
+                            taskdate.setText(asesoriaList.get(x).getAsesor()+"\t\t\t\t");
                             row.addView(taskdate);
 
                             TextView title = new TextView(HistorialActivity.this);
-                            taskdate.setText(asesoriaList.get(x).getInicio());
+                            title.setTextSize(10);
+                            title.setText(asesoriaList.get(x).getInicio()+"\t\t\t\t");
                             row.addView(title);
-                            taskdate.setTextSize(10);
 
                             TextView taskhour = new TextView(HistorialActivity.this);
-                            taskdate.setText(asesoriaList.get(x).getFin());
                             taskhour.setTextSize(10);
+                            taskhour.setText(asesoriaList.get(x).getFin()+"\t\t\t\t");
                             row.addView(taskhour);
 
                             TextView description = new TextView(HistorialActivity.this);
-                            taskdate.setText(asesoriaList.get(x).getHoras());
-                            row.addView(description);
                             description.setTextSize(10);
+                            description.setText(asesoriaList.get(x).getHoras());
+                            row.addView(description);
 
                             table.addView(row);
 

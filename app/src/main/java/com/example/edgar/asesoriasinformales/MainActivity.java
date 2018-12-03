@@ -45,6 +45,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
     private static final int RC_SIGN_IN = 123;
     GoogleSignInClient mGoogleSignInClient;
     GoogleSignInAccount account;
@@ -54,10 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = new Intent();
-        intent.putExtra("account", account);
-        intent.setClass(getApplicationContext(), HistorialActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent();
+        //intent.putExtra("account", account);
+        //intent.setClass(getApplicationContext(), TeacherStats.class);
+        //startActivity(intent);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -189,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void updateUI(GoogleSignInAccount acct) {
         if(acct != null){
-            checkUser(acct.getEmail(), "email");
+            checkUser(acct.getId(), "id");
         }
         else{
             Log.i("Initial Sign in", "No account");
@@ -292,7 +293,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onResponse(JSONObject response) {
                         Log.i("Check User", response.toString());
                         try {
+                          //  Log.e("");
                             String role = response.getString("rol");
+                          //  String role = response.optString("rol");
                             startAdvisory(role);
                         } catch (JSONException e) {
                             e.printStackTrace();

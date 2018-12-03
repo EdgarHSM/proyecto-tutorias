@@ -293,9 +293,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onResponse(JSONObject response) {
                         Log.i("Check User", response.toString());
                         try {
-                          //  Log.e("");
                             String role = response.getString("rol");
-                          //  String role = response.optString("rol");
                             startAdvisory(role);
                         } catch (JSONException e) {
                             e.printStackTrace();

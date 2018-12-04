@@ -190,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void updateUI(GoogleSignInAccount acct) {
         if(acct != null){
+            Log.d("MainActivity",acct.getId());
             checkUser(acct.getId(), "id");
         }
         else{
